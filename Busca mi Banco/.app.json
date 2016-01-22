@@ -5,7 +5,31 @@
       "type": "kendo-ui-mobile:view",
       "name": "home",
       "components": [],
-      "title": "Home View",
+      "title": "Donde estoy?",
+      "addToNavigation": true,
+      "icon": "globe"
+    },
+    {
+      "type": "kendo-ui-mobile:view",
+      "name": "agenciasBcp",
+      "components": [],
+      "title": "Agencias BCP",
+      "addToNavigation": true,
+      "icon": "home"
+    },
+    {
+      "type": "kendo-ui-mobile:view",
+      "name": "acenciasScotiabank",
+      "components": [],
+      "title": "Agencias SCOTIABANK",
+      "addToNavigation": true,
+      "icon": "home"
+    },
+    {
+      "type": "kendo-ui-mobile:view",
+      "name": "agenciasInterbank",
+      "components": [],
+      "title": "Agencias INTERBANK",
       "addToNavigation": true,
       "icon": "home"
     }

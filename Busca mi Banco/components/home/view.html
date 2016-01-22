@@ -1,7 +1,40 @@
-<div data-role="view" data-title="Home View" data-layout="main" data-model="app.home" data-show="app.home.onShow" data-after-show="app.home.afterShow">
-
+<div data-role="view" data-title="Donde estoy?" data-layout="main" data-model="app.home" data-show="app.home.onShow" data-after-show="app.home.afterShow" data-before-hide="app.home.beforeHide">
     <!-- START_CUSTOM_CODE_home -->
     <!-- Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes -->
-
+    <!-- INICIO EJEMPLO MAPA OPENSTREETVIEW -->
+    <div class="container-fluid" style="width:100%; min-height:50px;">
+        <div class="row">
+            <div class="col-xs-8">
+                <button id="startSegPosDondeEstoy" type="button" onClick="startSegPOS();" class="btn btn-success" disabled>
+                    SEGUIMIENTO POSICION
+                </button>
+            </div>
+            <div class="col-xs-4">
+                <button id="stopSegPosDondeEstoy" type="button" onClick="stopSeguPOS();" class="btn btn-danger">
+                    STOP
+                </button>
+            </div>
+        </div>
+    </div>
+    <div id="mapDondeEstoy" style="width:100%;">
+        DFC Visualizar mi posicion en el Mapa acqui
+    </div>
+    <!-- FIN EJEMPLO MAPA OPENSTREETVIEW -->
     <!-- END_CUSTOM_CODE_home -->
+</div>
+<div data-role="modalview" id="errMsgDondeEstoy" style="width:200px;height:20%;">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12">
+                <h4>Por favor activar la funcion GPS</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <button type="button" onClick="closeErrMsgDondeEstoy();"  class="btn btn-info">
+                    OK
+                </button>
+            </div>
+        </div>
+    </div>
 </div>
