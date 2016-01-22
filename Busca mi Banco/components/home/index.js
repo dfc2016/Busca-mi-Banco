@@ -71,6 +71,7 @@ function closeErrMsgDondeEstoy() {
 function startSegPOS() {
     $("#startSegPosDondeEstoy").prop("disabled", true);
     $("#stopSegPosDondeEstoy").prop("disabled", false);
+    msgWaitForFosition();
     watchIDDondeEstoy = navigator.geolocation.watchPosition(
         onSuccessDondeEstoy, onErrorDondeEstoy, {
             timeout: 10000,
@@ -92,11 +93,27 @@ function msgWaitForMap() {
     strHTML += "<div class=\"row\">";
     strHTML += "<div class=\"col-xs-12\">";
     strHTML += "<h2>";
-    strHTML += "Tu posicion en el Mapa se visualizara acqui";
+    strHTML += "<br>";
+    strHTML += "Haz click en el boton [BUSCA MI POSICION] para que tu posicion en el Mapa se visualize acqui";
     strHTML += "</h2>";
     strHTML += "</div>";
     strHTML += "</div>";
     strHTML += "</div>";
     $("#mapDondeEstoy").html(strHTML);    
+}
+
+function msgWaitForFosition() {
+    var strHTML = "<div class=\"container-fluid\">";
+    strHTML += "<div class=\"row\">";
+    strHTML += "<div class=\"col-xs-12\">";
+    strHTML += "<h2>";
+    strHTML += "<br>";
+    strHTML += "Espera un momento por favor, buscando tu posicion...";
+    strHTML += "</h2>";
+    strHTML += "</div>";
+    strHTML += "</div>";
+    strHTML += "</div>";
+    $("#mapDondeEstoy").html(strHTML);    
+    
 }
     // END_CUSTOM_CODE_home
