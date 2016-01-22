@@ -3,20 +3,32 @@
 var watchIDDondeEstoy = null;
 
 app.home = kendo.observable({
+    beforeShow: function () {
+        console.log("DFC >>> beforeShow");
+        msgWaitForMap();
+    },
     onShow: function () {
-        watchIDDondeEstoy = navigator.geolocation.watchPosition(
-            onSuccessDondeEstoy, onErrorDondeEstoy, {
-                timeout: 10000,
-                enableHighAccuracy: true
-            }
-        );
+        $("#startSegPosDondeEstoy").prop("disabled", false);
+        $("#stopSegPosDondeEstoy").prop("disabled", true);
+        // watchIDDondeEstoy = navigator.geolocation.watchPosition(
+        //     onSuccessDondeEstoy, onErrorDondeEstoy, {
+        //         timeout: 10000,
+        //         enableHighAccuracy: true
+        //     }
+        // );
     },
     afterShow: function () {},
     beforeHide: function () {
         console.log("DFC >>> beforeHide");
         $("#startSegPosDondeEstoy").prop("disabled", false);
         $("#stopSegPosDondeEstoy").prop("disabled", true);
-        navigator.geolocation.clearWatch(watchIDDondeEstoy);
+        if (watchIDDondeEstoy != null){
+            navigator.geolocation.clearWatch(watchIDDondeEstoy);
+        }
+        
+    },
+    onHide: function () {
+        console.log("DFC >>> onHide");
     }
 });
 
@@ -72,5 +84,19 @@ function stopSeguPOS() {
         $("#startSegPosDondeEstoy").prop("disabled", false);
         $("#stopSegPosDondeEstoy").prop("disabled", true);
         navigator.geolocation.clearWatch(watchIDDondeEstoy);
-    }
+    	watchIDDondeEstoy = null;
+}
+
+function msgWaitForMap() {
+    var strHTML = "<div class=\"container-fluid\">";
+    strHTML += "<div class=\"row\">";
+    strHTML += "<div class=\"col-xs-12\">";
+    strHTML += "<h2>";
+    strHTML += "Tu posicion en el Mapa se visualizara acqui";
+    strHTML += "</h2>";
+    strHTML += "</div>";
+    strHTML += "</div>";
+    strHTML += "</div>";
+    $("#mapDondeEstoy").html(strHTML);    
+}
     // END_CUSTOM_CODE_home
