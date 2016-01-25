@@ -1,8 +1,35 @@
 <div data-role="view" data-title="Acencias SCOTIABANK" data-layout="main" data-model="app.acenciasScotiabank" 
-     data-show="app.acenciasScotiabank.onShowSB" data-after-show="app.acenciasScotiabank.afterShowSB">
+     data-before-show="app.acenciasScotiabank.beforeShowSB" data-show="app.acenciasScotiabank.onShowSB" 
+     data-after-show="app.acenciasScotiabank.afterShowSB" data-before-hide="app.acenciasScotiabank.beforeHideSB">
 
     <!-- START_CUSTOM_CODE_acenciasScotiabank -->
     <!-- Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes -->
-
+    <STYLE type="text/css">
+        .k-map .k-marker {
+            background-image: url(images/scotiabank_28.png) !important;
+        }
+        @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
+          .k-map .k-marker {
+            background-image: url(images/scotiabank_56.png) !important;
+          }
+        }
+    </STYLE>
+    <div class="container-fluid" style="width:100%; min-height:50px;">
+        <div class="row">
+            <div class="col-xs-12">&nbsp;</div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <button type="button" onClick="miPosYAgenciasSB();" class="btn btn-success">
+                    MI POSICION Y AGENCIAS
+                </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">&nbsp;</div>
+        </div>
+    </div>
+    <div id="mapDondeEstoySB" style="width:100%;">
+    </div>
     <!-- END_CUSTOM_CODE_acenciasScotiabank -->
 </div>

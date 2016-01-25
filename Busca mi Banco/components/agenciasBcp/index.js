@@ -10,6 +10,7 @@ app.agenciasBcp = kendo.observable({
     onShowBCP: function () {},
     afterShowBCP: function () {},
     beforeHideBCP: function () {
+        console.log("DFC >>> beforeHideBCP TEST BCP");
         if (watchIDBCP != null) {
             navigator.geolocation.clearWatch(watchIDBCP);
         }
@@ -27,7 +28,6 @@ function miPosYAgenciasBCP() {
             enableHighAccuracy: true
         }
     );
-
 }
 
 function onSuccessMiPosYAgenciasBCP(position) {
@@ -88,7 +88,7 @@ function onSuccessMiPosYAgenciasBCP(position) {
 }
 
 function onErrorMiPosYAgenciasBCP(error) {
-
+    // TODO: implement here the managment of GPS error in general way; parametrized...
 }
 
 function msgWaitForMapBCP() {
