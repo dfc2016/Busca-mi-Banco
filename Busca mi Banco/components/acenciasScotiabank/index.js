@@ -5,6 +5,7 @@ var watchIDSB = null;
 app.acenciasScotiabank = kendo.observable({
     beforeShowSB: function () {
         console.log("DFC >>> beforeShowSB TEST Scotia Bank");
+        //$(".k-map.k-marker").css("background-image", "url(images/scotiabank_28.png) !important");
         msgWaitForMapSB();
     },
     onShowSB: function() {},

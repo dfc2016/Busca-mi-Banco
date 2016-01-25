@@ -5,6 +5,7 @@ var watchIDBCP = null;
 app.agenciasBcp = kendo.observable({
     beforeShowBCP: function () {
         console.log("DFC >>> beforeShowBCP TEST BCP");
+        //$(".k-map.k-marker").css("background-image", "url(images/bcp_28.png) !important");
         msgWaitForMapBCP();
     },
     onShowBCP: function () {},
