@@ -32,6 +32,14 @@
       "title": "Agencias INTERBANK",
       "addToNavigation": true,
       "icon": "home"
+    },
+    {
+      "type": "kendo-ui-mobile:view",
+      "name": "agenciasBancoNacion",
+      "components": [],
+      "title": "Agencias Banco de la Nacion",
+      "addToNavigation": true,
+      "icon": "home"
     }
   ],
   "dataProviders": [],
