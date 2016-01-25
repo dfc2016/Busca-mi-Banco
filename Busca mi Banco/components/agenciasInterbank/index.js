@@ -1,8 +1,8 @@
 'use strict';
 
 app.agenciasInterbank = kendo.observable({
-    onShow: function() {},
-    afterShow: function() {}
+    onShowIB: function() {},
+    afterShowIB: function() {}
 });
 
 // START_CUSTOM_CODE_agenciasInterbank

@@ -1,8 +1,8 @@
 'use strict';
 
 app.acenciasScotiabank = kendo.observable({
-    onShow: function() {},
-    afterShow: function() {}
+    onShowSB: function() {},
+    afterShowSB: function() {}
 });
 
 // START_CUSTOM_CODE_acenciasScotiabank

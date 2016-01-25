@@ -46,4 +46,19 @@
 // START_CUSTOM_CODE_kendoUiMobileApp
 // Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes
 
+function msgWaitForFosition(idMapName) {
+    var strHTML = "<div class=\"container-fluid\">";
+    strHTML += "<div class=\"row\">";
+    strHTML += "<div class=\"col-xs-12\">";
+    strHTML += "<h2>";
+    strHTML += "<br>";
+    strHTML += "Espera un momento por favor, buscando tu posicion...";
+    strHTML += "</h2>";
+    strHTML += "</div>";
+    strHTML += "</div>";
+    strHTML += "</div>";
+    //$("#mapDondeEstoy").html(strHTML);
+    $("#"+idMapName).html(strHTML);
+}
+
 // END_CUSTOM_CODE_kendoUiMobileApp

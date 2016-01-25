@@ -10,12 +10,6 @@ app.home = kendo.observable({
     onShow: function () {
         $("#startSegPosDondeEstoy").prop("disabled", false);
         $("#stopSegPosDondeEstoy").prop("disabled", true);
-        // watchIDDondeEstoy = navigator.geolocation.watchPosition(
-        //     onSuccessDondeEstoy, onErrorDondeEstoy, {
-        //         timeout: 10000,
-        //         enableHighAccuracy: true
-        //     }
-        // );
     },
     afterShow: function () {},
     beforeHide: function () {
@@ -71,7 +65,7 @@ function closeErrMsgDondeEstoy() {
 function startSegPOS() {
     $("#startSegPosDondeEstoy").prop("disabled", true);
     $("#stopSegPosDondeEstoy").prop("disabled", false);
-    msgWaitForFosition();
+    msgWaitForFosition("mapDondeEstoy");
     watchIDDondeEstoy = navigator.geolocation.watchPosition(
         onSuccessDondeEstoy, onErrorDondeEstoy, {
             timeout: 10000,
@@ -102,18 +96,4 @@ function msgWaitForMap() {
     $("#mapDondeEstoy").html(strHTML);    
 }
 
-function msgWaitForFosition() {
-    var strHTML = "<div class=\"container-fluid\">";
-    strHTML += "<div class=\"row\">";
-    strHTML += "<div class=\"col-xs-12\">";
-    strHTML += "<h2>";
-    strHTML += "<br>";
-    strHTML += "Espera un momento por favor, buscando tu posicion...";
-    strHTML += "</h2>";
-    strHTML += "</div>";
-    strHTML += "</div>";
-    strHTML += "</div>";
-    $("#mapDondeEstoy").html(strHTML);    
-    
-}
-    // END_CUSTOM_CODE_home
+//     // END_CUSTOM_CODE_home
