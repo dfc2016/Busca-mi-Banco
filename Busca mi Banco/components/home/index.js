@@ -55,8 +55,7 @@ function onSuccessDondeEstoy(position) {
 }
 
 function onErrorDondeEstoy(error) {
-    //alert('code: ' + error.code + '\n' + 'message: ' + error.message + '\n');
-    openErrMsgGPS();
+    openErrMsgGPS(error);
 }
 
 function startSegPOS() {
