@@ -5,6 +5,7 @@ var watchIDDondeEstoy = null;
 app.home = kendo.observable({
     beforeShow: function () {
         console.log("DFC >>> beforeShow");
+        $("#IconsMarker").text("");
         msgWaitForMap();
     },
     onShow: function () {

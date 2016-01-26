@@ -5,7 +5,7 @@ var watchIDIB = null;
 app.agenciasInterbank = kendo.observable({
     beforeShowIB: function () {
         console.log("DFC >>> beforeShowIB TEST Interbank");
-        //$(".k-map.k-marker").css("background-image", "url(images/scotiabank_28.png) !important");
+        selectIconsPinMarkers("images/interbank_28.png");
         msgWaitForMapIB();
     },
     onShowIB: function() {},

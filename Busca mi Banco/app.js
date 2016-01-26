@@ -61,4 +61,14 @@ function msgWaitForFosition(idMapName) {
     $("#"+idMapName).html(strHTML);
 }
 
+function selectIconsPinMarkers(icons_family){
+    	$("#IconsMarker").text("");
+    
+        var strCSSIcons = "";
+        strCSSIcons += ".k-map .k-marker { ";
+        strCSSIcons += " background-image: url("+ icons_family +") !important; ";
+        strCSSIcons += "}";
+        $("#IconsMarker").text(strCSSIcons);
+}
+
 // END_CUSTOM_CODE_kendoUiMobileApp

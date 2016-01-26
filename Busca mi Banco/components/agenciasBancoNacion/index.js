@@ -5,7 +5,7 @@ var watchIDBN = null;
 app.agenciasBancoNacion = kendo.observable({
     beforeShowBN: function () {
         console.log("DFC >>> beforeShowBN TEST Banco Nación");
-        //$(".k-map.k-marker").css("background-image", "url(images/scotiabank_28.png) !important");
+        selectIconsPinMarkers("images/banco_nac_28.png");
         msgWaitForMapBN();
     },
     onShowBN: function() {},

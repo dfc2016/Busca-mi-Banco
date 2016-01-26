@@ -5,7 +5,7 @@ var watchIDBCP = null;
 app.agenciasBcp = kendo.observable({
     beforeShowBCP: function () {
         console.log("DFC >>> beforeShowBCP TEST BCP");
-        //$(".k-map.k-marker").css("background-image", "url(images/bcp_28.png) !important");
+        selectIconsPinMarkers("images/bcp_28.png");
         msgWaitForMapBCP();
     },
     onShowBCP: function () {},
@@ -90,6 +90,7 @@ function onSuccessMiPosYAgenciasBCP(position) {
 
 function onErrorMiPosYAgenciasBCP(error) {
     // TODO: implement here the managment of GPS error in general way; parametrized...
+    
 }
 
 function msgWaitForMapBCP() {
