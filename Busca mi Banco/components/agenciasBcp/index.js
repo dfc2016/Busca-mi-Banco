@@ -5,7 +5,6 @@ var watchIDBCP = null;
 app.agenciasBcp = kendo.observable({
     beforeShowBCP: function () {
         console.log("DFC >>> beforeShowBCP TEST BCP");
-        selectIconsPinMarkers("images/bcp_28.png");
         msgWaitForMapBCP();
     },
     onShowBCP: function () {},
@@ -84,6 +83,11 @@ function onSuccessMiPosYAgenciasBCP(position) {
 
     navigator.geolocation.clearWatch(watchIDBCP);
     watchIDBCP = null;
+    
+    selectIconsPinMarkers(
+        "images/bcp_28.png",
+        "images/bcp_56.png"
+    );
 
     console.log("DFC >>> Mapping pin and pinTarget BCP");
 }

@@ -61,13 +61,20 @@ function msgWaitForFosition(idMapName) {
     $("#"+idMapName).html(strHTML);
 }
 
-function selectIconsPinMarkers(icons_family){
+function selectIconsPinMarkers(icons_family,icons_family_2x){
     	$("#IconsMarker").text("");
     
         var strCSSIcons = "";
+    
         strCSSIcons += ".k-map .k-marker { ";
         strCSSIcons += " background-image: url("+ icons_family +") !important; ";
         strCSSIcons += "}";
+    
+    	strCSSIcons += " @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) { ";
+    	strCSSIcons += " .k-map .k-marker { ";
+        strCSSIcons += " background-image: url("+ icons_family_2x +") !important; ";
+    	strCSSIcons += "}";
+    	strCSSIcons += " }";
         $("#IconsMarker").text(strCSSIcons);
 }
 

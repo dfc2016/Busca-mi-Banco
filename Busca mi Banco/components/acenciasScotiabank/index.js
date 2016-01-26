@@ -5,7 +5,6 @@ var watchIDSB = null;
 app.acenciasScotiabank = kendo.observable({
     beforeShowSB: function () {
         console.log("DFC >>> beforeShowSB TEST Scotia Bank");
-        selectIconsPinMarkers("images/scotiabank_28.png");
         msgWaitForMapSB();
     },
     onShowSB: function() {},
@@ -84,6 +83,11 @@ function onSuccessMiPosYAgenciasSB(position){
 
     navigator.geolocation.clearWatch(watchIDSB);
     watchIDSB = null;
+    
+    selectIconsPinMarkers(
+        "images/scotiabank_28.png",
+        "images/scotiabank_56.png"
+    );
 
     console.log("DFC >>> Mapping pin and pinTarget Scotia Bank");   
 }

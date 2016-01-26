@@ -5,7 +5,6 @@ var watchIDBN = null;
 app.agenciasBancoNacion = kendo.observable({
     beforeShowBN: function () {
         console.log("DFC >>> beforeShowBN TEST Banco Nación");
-        selectIconsPinMarkers("images/banco_nac_28.png");
         msgWaitForMapBN();
     },
     onShowBN: function() {},
@@ -84,6 +83,11 @@ function onSuccessMiPosYAgenciasBN(position){
 
     navigator.geolocation.clearWatch(watchIDBN);
     watchIDBN = null;
+    
+    selectIconsPinMarkers(
+        "images/banco_nac_28.png",
+        "images/banco_nac_56.png"
+    );
 
     console.log("DFC >>> Mapping pin and pinTarget Banco Nación");
 }

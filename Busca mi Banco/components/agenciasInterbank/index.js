@@ -5,7 +5,6 @@ var watchIDIB = null;
 app.agenciasInterbank = kendo.observable({
     beforeShowIB: function () {
         console.log("DFC >>> beforeShowIB TEST Interbank");
-        selectIconsPinMarkers("images/interbank_28.png");
         msgWaitForMapIB();
     },
     onShowIB: function() {},
@@ -84,6 +83,11 @@ function onSuccessMiPosYAgenciasIB(position){
 
     navigator.geolocation.clearWatch(watchIDIB);
     watchIDIB = null;
+    
+    selectIconsPinMarkers(
+        "images/interbank_28.png",
+        "images/interbank_56.png"
+    );
 
     console.log("DFC >>> Mapping pin and pinTarget Interbank");
 }
