@@ -78,4 +78,13 @@ function selectIconsPinMarkers(icons_family,icons_family_2x){
         $("#IconsMarker").text(strCSSIcons);
 }
 
+function openErrMsgGPS() {
+    $("#errMsgGPS").data("kendoMobileModalView").open();
+}
+
+function closeErrMsgGPS() {
+    $("#errMsgGPS").data("kendoMobileModalView").close();
+}
+
+
 // END_CUSTOM_CODE_kendoUiMobileApp

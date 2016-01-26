@@ -40,6 +40,23 @@
 
         <!-- application views will be rendered here -->
 
+        <div data-role="modalview" id="errMsgGPS" style="width:200px;height:20%;">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h4>Por favor activar la funcion GPS</h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <button type="button" onClick="closeErrMsgGPS();"  class="btn btn-info">
+                            OK
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
         <footer data-role="footer">
             <div data-role="tabstrip" id="navigation-container">
                 <a href="components/home/view.html" data-icon="globe">Donde estoy?</a>

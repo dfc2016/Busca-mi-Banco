@@ -56,11 +56,7 @@ function onSuccessDondeEstoy(position) {
 
 function onErrorDondeEstoy(error) {
     //alert('code: ' + error.code + '\n' + 'message: ' + error.message + '\n');
-    $("#errMsgDondeEstoy").data("kendoMobileModalView").open();
-}
-
-function closeErrMsgDondeEstoy() {
-    $("#errMsgDondeEstoy").data("kendoMobileModalView").close();
+    openErrMsgGPS();
 }
 
 function startSegPOS() {
