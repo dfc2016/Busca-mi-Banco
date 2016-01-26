@@ -78,8 +78,15 @@ function selectIconsPinMarkers(icons_family,icons_family_2x){
         $("#IconsMarker").text(strCSSIcons);
 }
 
-function openErrMsgGPS() {
+function openErrMsgGPS(error) {
     $("#errMsgGPS").data("kendoMobileModalView").open();
+    if (error != null){
+        //alert('code: ' + error.code + '\n' + 'message: ' + error.message + '\n');
+        var strMsg = "";
+        strMsg += 'Code: ' + error.code + '<br>';
+        strMsg += 'Message: ' + error.message;
+        $("#errCodeAndMsg").html(strMsg);
+    }
 }
 
 function closeErrMsgGPS() {

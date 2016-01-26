@@ -12,16 +12,13 @@
     <link rel="stylesheet" href="http://kendo.cdn.telerik.com/2016.1.112/styles/kendo.silver.min.css">
     <link href="styles/main.css" rel="stylesheet">
     <script src="cordova.js"></script>
-
     <script src="kendo/js/jquery.min.js"></script>
     <!-- Latest compiled JavaScript -->
     <!--*** DFC IMPORTANT: Always load bootstrap.min.js __AFTER__ jquery.min.js Bootstrap's JavaScript requires jQuery ***-->
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
     <script src="kendo/js/kendo.mobile.min.js"></script>
     <!--*** DFC IMPORTANT: Always load kendo.all.min.js __AFTER__ kendo.mobile.min.js to avoid conflicts name ***-->
     <script src="http://kendo.cdn.telerik.com/2016.1.112/js/kendo.all.min.js"></script>
-    
     <script src="app.js"></script>
 </head>
 
@@ -37,19 +34,25 @@
                 <span data-role="view-title"></span>
             </div>
         </header>
-
         <!-- application views will be rendered here -->
-
-        <div data-role="modalview" id="errMsgGPS" style="width:200px;height:20%;">
-            <div class="container-fluid">
+        
+        <div data-role="modalview" id="errMsgGPS" style="width:200px;height:40%;">
+            <div class="container-fluid" style="min-height:150px;">
                 <div class="row">
                     <div class="col-xs-12">
                         <h4>Por favor activar la funcion GPS</h4>
                     </div>
                 </div>
                 <div class="row">
+                    <div id="errCodeAndMsg" class="col-xs-12">
+                        Err Code And Msg
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="row">
                     <div class="col-xs-12">
-                        <button type="button" onClick="closeErrMsgGPS();"  class="btn btn-info">
+                        <button type="button" onClick="closeErrMsgGPS();" class="btn btn-info">
                             OK
                         </button>
                     </div>
@@ -67,16 +70,13 @@
             </div>
         </footer>
     </div>
-
     <div data-role="layout" data-id="main-nonav">
         <header data-role="header">
             <div data-role="navbar">
                 <span data-role="view-title"></span>
             </div>
         </header>
-
         <!-- application views will be rendered here -->
-
         <footer data-role="footer">
         </footer>
     </div>
@@ -87,7 +87,6 @@
         Tile.png >>> image PNG [28x80] >>> pin icon [28x40] >>> *pinTarget* UP pos *pin* DOWN pos
         Tile_2x.png >>> image PNG [56x160] >>> pin icon [56x80] >>> *pinTarget* UP pos *pin* DOWN pos
     -->
-
     <!--
     <STYLE type="text/css">
         .k-map .k-marker {
@@ -102,7 +101,6 @@
     -->
     <STYLE id="IconsMarker" type="text/css">
     </STYLE>
-
     <!-- END_CUSTOM_CODE_kendoUiMobileApp -->
 </body>
 

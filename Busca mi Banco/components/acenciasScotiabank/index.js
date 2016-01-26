@@ -94,6 +94,7 @@ function onSuccessMiPosYAgenciasSB(position){
 
 function onErrorMiPosYAgenciasSB(error){
     // TODO: implement here the managment of GPS error in general way; parametrized...
+    openErrMsgGPS();
 }
 
 function msgWaitForMapSB() {
