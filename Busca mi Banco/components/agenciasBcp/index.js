@@ -99,13 +99,15 @@ function msgWaitForMapBCP() {
     strHTML += "<div class=\"row\">";
     strHTML += "<div class=\"col-xs-12\">";
     strHTML += "<h3>";
-    strHTML += "<br>";
-    strHTML += "Haz click en el boton [MI POSICION Y AGENCIAS] para encontrart tu posicion y las agencias BCP en el Mapa";
-    strHTML += "</hr>";
+    strHTML += "Haz click en el boton [MI POSICION Y AGENCIAS] para encontrar tu posicion y las agencias BCP en el Mapa";
+    strHTML += "</h3>";
     strHTML += "</div>";
     strHTML += "</div>";
     strHTML += "</div>";
     $("#mapDondeEstoyBCP").html(strHTML);
 }
 
+function posValmarOficinaYAgenciasBCP() {
+    console.log("DFC >>> Valmar Oficina Y Agencias BCP");
+}
 // END_CUSTOM_CODE_agenciasBcp

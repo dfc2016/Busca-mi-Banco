@@ -57,9 +57,10 @@ function msgWaitForFosition(idMapName) {
     strHTML += "</div>";
     strHTML += "</div>";
     strHTML += "</div>";
-    //$("#mapDondeEstoy").html(strHTML);
     $("#" + idMapName).html(strHTML);
 }
+
+// TO DO: implement here the generic fx msgWaitForMap(idMapName,cmd1,cmd2) {...}
 
 function selectIconsPinMarkers(icons_family, icons_family_2x) {
     $("#IconsMarker").text("");
