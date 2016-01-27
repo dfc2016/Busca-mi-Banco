@@ -2,10 +2,10 @@
   "ProjectName": "Busca mi Banco",
   "ProjectGuid": "281297af-a900-404e-aa08-9037bcebe3c3",
   "projectVersion": 1,
-  "AppIdentifier": "com.telerik.BuscamiBanco",
-  "DisplayName": "Busca mi Banco",
+  "AppIdentifier": "com.telerik.bank",
+  "DisplayName": "Bank GPS",
   "Author": "",
-  "Description": "Busca mi Banco",
+  "Description": "Bank GPS",
   "BundleVersion": "1.0",
   "AndroidVersionCode": "1",
   "iOSDeviceFamily": [

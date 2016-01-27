@@ -1,16 +1,9 @@
 /*New circle border Tab Strip menu custom*/
 .km-flat .km-tabstrip .km-button {
-   border: #8B8B8B 1px solid;
-   border-radius: 50%;
+   border: 1px solid rgba(0,0,0,0.1);
+/*    border-radius: 50%; */
 }
-/*New squared border Tab Strip menu custom*/
-/* .km-flat .km-tabstrip .km-button {
-    font-size: .7em;
-    display: table-cell;
-    /* border: 0; */
-    border: #8B8B8B 1px solid;
-} */
-
+/*end*/
 #kendoUiMobileApp .image-with-text img {
     float: left;
     margin-right: 15px;
