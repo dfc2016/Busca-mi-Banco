@@ -61,6 +61,50 @@ function msgWaitForFosition(idMapName) {
 }
 
 // TO DO: implement here the generic fx msgWaitForMap(idMapName,cmd1,cmd2) {...}
+function msgWaitForMap(idMapName,cmd1,cmd2,agencias) {
+    console.log("DFC >>> msgWaitForMap TEST BCP INICIO");
+    // var strHTML = "<div class=\"container-fluid\">";
+    
+    // strHTML += "<div class=\"row\">";
+    // strHTML += "<div class=\"col-xs-12\">";
+    // strHTML += "<h4>";
+    // strHTML += "Click en:";
+    // strHTML += "</h4>";
+    // strHTML += "</div>";
+    // strHTML += "</div>";
+    
+    // if (cmd1 != ""){
+    //     strHTML += "<div class=\"row\">";
+    //     strHTML += "<div class=\"col-xs-12\">";
+    //     strHTML += cmd1;
+    //     strHTML += "</div>";
+    //     strHTML += "</div>";        
+    // }
+    
+    // if (cmd2 != ""){
+    //     strHTML += "<div class=\"row\">";
+    //     strHTML += "<div class=\"col-xs-12\">";
+    //     strHTML += cmd2;
+    //     strHTML += "</div>";
+    //     strHTML += "</div>";        
+    // }
+
+    // strHTML += "<div class=\"row\">";
+    // strHTML += "<div class=\"col-xs-12\">";
+    // strHTML += "<h4>";
+    // strHTML += "Para encontrar las agencias " + agencias + "en el mapa";
+    // strHTML += "</h4>";
+    // strHTML += "</div>";
+    // strHTML += "</div>";
+
+    // strHTML += "</div>";
+    // $("#" + idMapName).html(strHTML);
+    // console.log("DFC >>> msgWaitForMap TEST BCP FIN");
+}
+
+function msgFromAppJs(V,V2) {
+    console.log("DFC >>> msgFromAppJs"+V+V2);
+}
 
 function selectIconsPinMarkers(icons_family, icons_family_2x) {
     $("#IconsMarker").text("");

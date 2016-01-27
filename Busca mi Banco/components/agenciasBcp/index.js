@@ -5,7 +5,11 @@ var watchIDBCP = null;
 app.agenciasBcp = kendo.observable({
     beforeShowBCP: function () {
         console.log("DFC >>> beforeShowBCP TEST BCP");
-        msgWaitForMapBCP();
+        //msgWaitForMapBCP();
+
+        msgWaitForMap("mapDondeEstoyBCP","MI POSICION Y AGENCIAS","VALMAR Y AGENCIAS","BCP");
+        msgFromAppJs(1,"Hola");
+        console.log("DFC >>> beforeShowBCP TEST BCP END!!");
     },
     onShowBCP: function () {},
     afterShowBCP: function () {},
@@ -23,7 +27,9 @@ function miPosYAgenciasBCP() {
     console.log("DFC >>> Mi Pos Y Agencias BCP");
     msgWaitForFosition("mapDondeEstoyBCP");
     watchIDBCP = navigator.geolocation.watchPosition(
-        onSuccessMiPosYAgenciasBCP, onErrorMiPosYAgenciasBCP, {enableHighAccuracy: true}
+        onSuccessMiPosYAgenciasBCP, onErrorMiPosYAgenciasBCP, {
+            enableHighAccuracy: true
+        }
     );
 }
 
@@ -80,7 +86,7 @@ function onSuccessMiPosYAgenciasBCP(position) {
 
     navigator.geolocation.clearWatch(watchIDBCP);
     watchIDBCP = null;
-    
+
     selectIconsPinMarkers(
         "images/bcp_28.png",
         "images/bcp_56.png"
@@ -95,19 +101,25 @@ function onErrorMiPosYAgenciasBCP(error) {
 }
 
 function msgWaitForMapBCP() {
-    var strHTML = "<div class=\"container-fluid\">";
-    strHTML += "<div class=\"row\">";
-    strHTML += "<div class=\"col-xs-12\">";
-    strHTML += "<h3>";
-    strHTML += "Haz click en el boton [MI POSICION Y AGENCIAS] para encontrar tu posicion y las agencias BCP en el Mapa";
-    strHTML += "</h3>";
-    strHTML += "</div>";
-    strHTML += "</div>";
-    strHTML += "</div>";
-    $("#mapDondeEstoyBCP").html(strHTML);
+    // var strHTML = "<div class=\"container-fluid\">";
+    // strHTML += "<div class=\"row\">";
+    // strHTML += "<div class=\"col-xs-12\">";
+    // strHTML += "<h3>";
+    // strHTML += "Haz click en el boton [MI POSICION Y AGENCIAS] para encontrar tu posicion y las agencias BCP en el Mapa";
+    // strHTML += "</h3>";
+    // strHTML += "</div>";
+    // strHTML += "</div>";
+    // strHTML += "</div>";
+    // $("#mapDondeEstoyBCP").html(strHTML);
+    msgWaitForMap(
+        "mapDondeEstoyBCP",
+        "MI POSICION Y AGENCIAS",
+        "VALMAR Y AGENCIAS",
+        "BCP"
+    );
 }
 
 function posValmarOficinaYAgenciasBCP() {
-    console.log("DFC >>> Valmar Oficina Y Agencias BCP");
-}
-// END_CUSTOM_CODE_agenciasBcp
+        console.log("DFC >>> Valmar Oficina Y Agencias BCP");
+    }
+    // END_CUSTOM_CODE_agenciasBcp
