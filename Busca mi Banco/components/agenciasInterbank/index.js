@@ -5,7 +5,12 @@ var watchIDIB = null;
 app.agenciasInterbank = kendo.observable({
     beforeShowIB: function () {
         console.log("DFC >>> beforeShowIB TEST Interbank");
-        msgWaitForMapIB();
+        msgWaitForMap(
+            "mapDondeEstoyIB",
+            "MI POSICION Y AGENCIAS",
+            "VALMAR Y AGENCIAS",
+            "Interbank"
+        );
     },
     onShowIB: function() {},
     afterShowIB: function() {},
@@ -29,7 +34,7 @@ function miPosYAgenciasIB(){
 
 function onSuccessMiPosYAgenciasIB(position){
     $("#mapDondeEstoyIB").kendoMap({
-        center: [position.coords.latitude, position.coords.longitude],
+        center: [position.coords.latitude - 0.05, position.coords.longitude],
         zoom: 12,
         layers: [
             {
@@ -94,17 +99,67 @@ function onErrorMiPosYAgenciasIB(error){
     openErrMsgGPS();
 }
 
-function msgWaitForMapIB(){
-    var strHTML = "<div class=\"container-fluid\">";
-    strHTML += "<div class=\"row\">";
-    strHTML += "<div class=\"col-xs-12\">";
-    strHTML += "<h3>";
-    strHTML += "<br>";
-    strHTML += "Haz click en el boton [MI POSICION Y AGENCIAS] para encontrart tu posicion y las agencias Interbank en el Mapa";
-    strHTML += "</hr>";
-    strHTML += "</div>";
-    strHTML += "</div>";
-    strHTML += "</div>";
-    $("#mapDondeEstoyIB").html(strHTML);
+function posValmarOficinaYAgenciasIB(){
+    console.log("DFC >>> Valmar Oficina Y Agencias Interank Inicio");
+    msgWaitForFosition("mapDondeEstoyIB");
+    
+    $("#mapDondeEstoyIB").kendoMap({
+        // LAT, LNG oficina Valmar - S. Isidro
+        center: [-12.10632 - 0.05, -77.03527],
+        zoom: 12,
+        layers: [
+            {
+                type: "tile",
+                urlTemplate: "http://#= subdomain #.tile.openstreetmap.org/#= zoom #/#= x #/#= y #.png",
+                subdomains: ["a", "b", "c"],
+        },
+            {
+                //Layer for positions of interesting sites
+                type: "marker",
+                dataSource: {
+                    transport: {
+                        read: {
+                            url: "http://54.213.238.161/geodata/interbank.json",
+                            dataType: "json"
+                        }
+                    }
+                },
+                locationField: "latlng",
+                titleField: "name",
+                shape: "pin",
+        },
+            {
+                //Layer for position of location's device
+                type: "marker",
+                dataSource: dsTarget,
+                locationField: "latlng",
+                titleField: "name",
+                shape: "pinTarget",
+        },
+
+        ],
+    });
+
+    var map = $("#mapDondeEstoyIB").data("kendoMap");
+
+    var dsTarget = new kendo.data.DataSource({
+        data: [
+            {
+                // LAT, LNG oficina Valmar - S. Isidro
+                latlng: [-12.10632,-77.03527],
+                name: "oficina Valmar - S. Isidro"
+            },
+        ]
+    });
+
+    var layerTarget = map.layers[2];
+    layerTarget.setDataSource(dsTarget);
+
+    selectIconsPinMarkers(
+        "images/interbank_28.png",
+        "images/interbank_56.png"
+    );
+    console.log("DFC >>> Valmar Oficina Y Agencias Interbank Fin");
 }
+
 // END_CUSTOM_CODE_agenciasInterbank
