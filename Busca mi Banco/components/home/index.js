@@ -6,7 +6,7 @@ app.home = kendo.observable({
     beforeShow: function () {
         console.log("DFC >>> beforeShow");
         $("#IconsMarker").text("");
-        msgWaitForMap();
+        // msgWaitForMap();
     },
     onShow: function () {
         $("#startSegPosDondeEstoy").prop("disabled", false);
@@ -75,18 +75,18 @@ function stopSeguPOS() {
     	watchIDDondeEstoy = null;
 }
 
-function msgWaitForMap() {
-    var strHTML = "<div class=\"container-fluid\">";
-    strHTML += "<div class=\"row\">";
-    strHTML += "<div class=\"col-xs-12\">";
-    strHTML += "<h2>";
-    strHTML += "<br>";
-    strHTML += "Haz click en el boton [BUSCA MI POSICION] para que tu posicion en el Mapa se visualize acqui";
-    strHTML += "</h2>";
-    strHTML += "</div>";
-    strHTML += "</div>";
-    strHTML += "</div>";
-    $("#mapDondeEstoy").html(strHTML);    
-}
+// function msgWaitForMap() {
+//     var strHTML = "<div class=\"container-fluid\">";
+//     strHTML += "<div class=\"row\">";
+//     strHTML += "<div class=\"col-xs-12\">";
+//     strHTML += "<h2>";
+//     strHTML += "<br>";
+//     strHTML += "Haz click en el boton [BUSCA MI POSICION] para que tu posicion en el Mapa se visualize acqui";
+//     strHTML += "</h2>";
+//     strHTML += "</div>";
+//     strHTML += "</div>";
+//     strHTML += "</div>";
+//     $("#mapDondeEstoy").html(strHTML);    
+// }
 
 //     // END_CUSTOM_CODE_home
