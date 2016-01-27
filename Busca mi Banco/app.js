@@ -62,42 +62,42 @@ function msgWaitForFosition(idMapName) {
 // TO DO: implement here the generic fx msgWaitForMap(idMapName,cmd1,cmd2) {...}
 function msgWaitForMap(idMapName,cmd1,cmd2,agencias) {
     var strHTML = "<div class=\"container-fluid\">";
-    
-    strHTML += "<div class=\"row\">";
-    strHTML += "<div class=\"col-xs-12\">";
-    strHTML += "<h4>";
-    strHTML += "Click en:";
-    strHTML += "</h4>";
-    strHTML += "</div>";
-    strHTML += "</div>";
-    
+        
     if (cmd1 != ""){
         strHTML += "<div class=\"row\">";
         strHTML += "<div class=\"col-xs-12\">";
         strHTML += "<h4>";
-        strHTML += "[" + cmd1 + "]";
+        strHTML += "Click en <br> [" + cmd1 + "]";
         strHTML += "</h4>";
         strHTML += "</div>";
-        strHTML += "</div>";        
+        strHTML += "</div>";
+        
+        strHTML += "<div class=\"row\">";
+        strHTML += "<div class=\"col-xs-12\">";
+        strHTML += "<h4>";
+        strHTML += "Para encontrar mi posocion y las agencias "+ agencias + " en el mapa";
+        strHTML += "</h4>";
+        strHTML += "</div>";
+        strHTML += "</div>";
     }
     
     if (cmd2 != ""){
         strHTML += "<div class=\"row\">";
         strHTML += "<div class=\"col-xs-12\">";
         strHTML += "<h4>";
-        strHTML += "[" + cmd2 + "]";
+        strHTML += "Click en <br> [" + cmd2 + "]";
         strHTML += "</h4>";
         strHTML += "</div>";
-        strHTML += "</div>";        
+        strHTML += "</div>";
+        
+        strHTML += "<div class=\"row\">";
+        strHTML += "<div class=\"col-xs-12\">";
+        strHTML += "<h4>";
+        strHTML += "Para encontrar la oficina Valmar y las agencias "+ agencias + " en el mapa";
+        strHTML += "</h4>";
+        strHTML += "</div>";
+        strHTML += "</div>";
     }
-
-    strHTML += "<div class=\"row\">";
-    strHTML += "<div class=\"col-xs-12\">";
-    strHTML += "<h4>";
-    strHTML += "Para encontrar las agencias " + agencias + " en el mapa";
-    strHTML += "</h4>";
-    strHTML += "</div>";
-    strHTML += "</div>";
 
     strHTML += "</div>";
     $("#" + idMapName).html(strHTML);

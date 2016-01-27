@@ -36,7 +36,7 @@ function onSuccessDondeEstoy(position) {
     console.log("DFC >>> [LAT]: " + position.coords.latitude);
     console.log("DFC >>> [LNG]: " + position.coords.longitude);
     $("#mapDondeEstoy").kendoMap({
-        center: [position.coords.latitude, position.coords.longitude],
+        center: [position.coords.latitude -0.045, position.coords.longitude],
         zoom: 12,
         layers: [{
             type: "tile",
@@ -81,7 +81,7 @@ function msgStartForMap() {
     strHTML += "<div class=\"row\">";
     strHTML += "<div class=\"col-xs-12\">";
     strHTML += "<h4>";
-    strHTML += "Click en [BUSCA MI POSICION] para ubicar tu posicion en el Mapa y seguir los movimentos";
+    strHTML += "Click en <br> [BUSCA MI POSICION] <br><br> Para ubicar tu posicion en el Mapa y seguir los movimentos";
     strHTML += "</h4>";
     strHTML += "</div>";
     strHTML += "</div>";
@@ -89,7 +89,7 @@ function msgStartForMap() {
     strHTML += "<div class=\"row\">";
     strHTML += "<div class=\"col-xs-12\">";
     strHTML += "<h4>";
-    strHTML += "Click en [STOP] para terminar seguimiento de los movimentos";
+    strHTML += "Click en <br> [STOP] <br><br> Para terminar seguimiento de los movimentos";
     strHTML += "</h4>";
     strHTML += "</div>";
     strHTML += "</div>";
