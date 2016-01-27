@@ -5,11 +5,12 @@ var watchIDBCP = null;
 app.agenciasBcp = kendo.observable({
     beforeShowBCP: function () {
         console.log("DFC >>> beforeShowBCP TEST BCP");
-        //msgWaitForMapBCP();
-
-        msgWaitForMap("mapDondeEstoyBCP","MI POSICION Y AGENCIAS","VALMAR Y AGENCIAS","BCP");
-        msgFromAppJs(1,"Hola");
-        console.log("DFC >>> beforeShowBCP TEST BCP END!!");
+        msgWaitForMap(
+            "mapDondeEstoyBCP",
+            "MI POSICION Y AGENCIAS",
+            "VALMAR Y AGENCIAS",
+            "BCP"
+        );
     },
     onShowBCP: function () {},
     afterShowBCP: function () {},
@@ -35,7 +36,7 @@ function miPosYAgenciasBCP() {
 
 function onSuccessMiPosYAgenciasBCP(position) {
     $("#mapDondeEstoyBCP").kendoMap({
-        center: [position.coords.latitude, position.coords.longitude],
+        center: [position.coords.latitude - 0.05, position.coords.longitude],
         zoom: 12,
         layers: [
             {
@@ -96,30 +97,71 @@ function onSuccessMiPosYAgenciasBCP(position) {
 }
 
 function onErrorMiPosYAgenciasBCP(error) {
-    // TODO: implement here the managment of GPS error in general way; parametrized...
     openErrMsgGPS(error);
 }
 
-function msgWaitForMapBCP() {
-    // var strHTML = "<div class=\"container-fluid\">";
-    // strHTML += "<div class=\"row\">";
-    // strHTML += "<div class=\"col-xs-12\">";
-    // strHTML += "<h3>";
-    // strHTML += "Haz click en el boton [MI POSICION Y AGENCIAS] para encontrar tu posicion y las agencias BCP en el Mapa";
-    // strHTML += "</h3>";
-    // strHTML += "</div>";
-    // strHTML += "</div>";
-    // strHTML += "</div>";
-    // $("#mapDondeEstoyBCP").html(strHTML);
-    msgWaitForMap(
-        "mapDondeEstoyBCP",
-        "MI POSICION Y AGENCIAS",
-        "VALMAR Y AGENCIAS",
-        "BCP"
+function posValmarOficinaYAgenciasBCP() {
+    console.log("DFC >>> Valmar Oficina Y Agencias BCP Inicio");
+    msgWaitForFosition("mapDondeEstoyBCP");
+    
+    $("#mapDondeEstoyBCP").kendoMap({
+        // LAT, LNG oficina Valmar - S. Isidro
+        center: [-12.10632 - 0.05, -77.03527],
+        zoom: 12,
+        layers: [
+            {
+                type: "tile",
+                urlTemplate: "http://#= subdomain #.tile.openstreetmap.org/#= zoom #/#= x #/#= y #.png",
+                subdomains: ["a", "b", "c"],
+        },
+            {
+                //Layer for positions of interesting sites
+                type: "marker",
+                dataSource: {
+                    transport: {
+                        read: {
+                            url: "http://54.213.238.161/geodata/bcp.json",
+                            dataType: "json"
+                        }
+                    }
+                },
+                locationField: "latlng",
+                titleField: "name",
+                shape: "pin",
+        },
+            {
+                //Layer for position of location's device
+                type: "marker",
+                dataSource: dsTarget,
+                locationField: "latlng",
+                titleField: "name",
+                shape: "pinTarget",
+        },
+
+        ],
+    });
+
+    var map = $("#mapDondeEstoyBCP").data("kendoMap");
+
+    var dsTarget = new kendo.data.DataSource({
+        data: [
+            {
+                // LAT, LNG oficina Valmar - S. Isidro
+                latlng: [-12.10632,-77.03527],
+                name: "oficina Valmar - S. Isidro"
+            },
+        ]
+    });
+
+    var layerTarget = map.layers[2];
+    layerTarget.setDataSource(dsTarget);
+
+    selectIconsPinMarkers(
+        "images/bcp_28.png",
+        "images/bcp_56.png"
     );
+
+    console.log("DFC >>> Valmar Oficina Y Agencias BCP Fin");
 }
 
-function posValmarOficinaYAgenciasBCP() {
-        console.log("DFC >>> Valmar Oficina Y Agencias BCP");
-    }
-    // END_CUSTOM_CODE_agenciasBcp
+// END_CUSTOM_CODE_agenciasBcp
