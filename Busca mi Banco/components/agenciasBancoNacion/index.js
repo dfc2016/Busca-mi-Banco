@@ -23,10 +23,7 @@ function miPosYAgenciasBN(){
     console.log("DFC >>> Mi Pos Y Agencias Banco Nación");
     msgWaitForFosition("mapDondeEstoyBN");
     watchIDBN = navigator.geolocation.watchPosition(
-        onSuccessMiPosYAgenciasBN, onErrorMiPosYAgenciasBN, {
-            timeout: 2000,
-            enableHighAccuracy: true
-        }
+        onSuccessMiPosYAgenciasBN, onErrorMiPosYAgenciasBN, {enableHighAccuracy: true}
     );    
 }
 
