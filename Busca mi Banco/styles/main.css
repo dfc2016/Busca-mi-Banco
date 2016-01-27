@@ -4,6 +4,13 @@
 /*    border-radius: 50%; */
 }
 /*end*/
+
+/*Menu custom*/
+.km-widget .km-view {
+   background-color: #f4f4f4;
+}
+/*end*/
+
 #kendoUiMobileApp .image-with-text img {
     float: left;
     margin-right: 15px;
