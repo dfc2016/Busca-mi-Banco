@@ -51,7 +51,6 @@ function msgWaitForFosition(idMapName) {
     strHTML += "<div class=\"row\">";
     strHTML += "<div class=\"col-xs-12\">";
     strHTML += "<h2>";
-    strHTML += "<br>";
     strHTML += "Espera un momento por favor, buscando tu posicion...";
     strHTML += "</h2>";
     strHTML += "</div>";
