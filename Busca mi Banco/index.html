@@ -35,6 +35,11 @@
             </div>
         </header>
         <!-- application views will be rendered here -->
+        <style>
+        .km-flat .km-tabstrip .km-button{
+            border: black 1px solid;
+        }
+        </style>
         <div data-role="modalview" id="errMsgGPS" style="width:200px;height:40%;">
             <div class="container-fluid" style="min-height:150px;">
                 <div class="row">
@@ -58,7 +63,7 @@
                 </div>
             </div>
         </div>
-        <footer data-role="footer">
+        <footer data-role="footer" style="background:#f4f4f4;">
             <div data-role="tabstrip" id="navigation-container">
                 <!--                 <a href="components/home/view.html" data-icon="globe">Donde estoy?</a>
                 <a href="components/agenciasBcp/view.html" data-icon="home">BCP</a>
