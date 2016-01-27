@@ -4,7 +4,7 @@ var watchIDDondeEstoy = null;
 
 app.home = kendo.observable({
     beforeShow: function () {
-        console.log("DFC >>> beforeShow");
+        // console.log("DFC >>> beforeShow");
         $("#IconsMarker").text("");
         msgStartForMap();
     },
@@ -14,7 +14,7 @@ app.home = kendo.observable({
     },
     afterShow: function () {},
     beforeHide: function () {
-        console.log("DFC >>> beforeHide");
+        // console.log("DFC >>> beforeHide");
         $("#startSegPosDondeEstoy").prop("disabled", false);
         $("#stopSegPosDondeEstoy").prop("disabled", true);
         if (watchIDDondeEstoy != null){
@@ -23,7 +23,7 @@ app.home = kendo.observable({
         
     },
     onHide: function () {
-        console.log("DFC >>> onHide");
+        // console.log("DFC >>> onHide");
     }
 });
 
@@ -31,10 +31,10 @@ app.home = kendo.observable({
 // Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes
 
 function onSuccessDondeEstoy(position) {
-    console.log("DFC >>> onSuccessDondeEstoy >>> Renderizar el Mapa de mi posicion");
-    console.log("DFC >>> Coordinadas iniciales: ");
-    console.log("DFC >>> [LAT]: " + position.coords.latitude);
-    console.log("DFC >>> [LNG]: " + position.coords.longitude);
+    // console.log("DFC >>> onSuccessDondeEstoy >>> Renderizar el Mapa de mi posicion");
+    // console.log("DFC >>> Coordinadas iniciales: ");
+    // console.log("DFC >>> [LAT]: " + position.coords.latitude);
+    // console.log("DFC >>> [LNG]: " + position.coords.longitude);
     $("#mapDondeEstoy").kendoMap({
         center: [position.coords.latitude -0.045, position.coords.longitude],
         zoom: 12,
@@ -81,7 +81,7 @@ function msgStartForMap() {
     strHTML += "<div class=\"row\">";
     strHTML += "<div class=\"col-xs-12\">";
     strHTML += "<h4>";
-    strHTML += "Click en <br> [BUSCA MI POSICION] <br><br> Para ubicar tu posicion en el Mapa y seguir los movimentos";
+    strHTML += "Click en <br> [BUSCA MI POSICION] <br><br> Para ubicar tu posición en el Mapa y seguir los movimentos";
     strHTML += "</h4>";
     strHTML += "</div>";
     strHTML += "</div>";

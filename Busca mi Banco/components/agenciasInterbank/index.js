@@ -4,7 +4,7 @@ var watchIDIB = null;
 
 app.agenciasInterbank = kendo.observable({
     beforeShowIB: function () {
-        console.log("DFC >>> beforeShowIB TEST Interbank");
+        // console.log("DFC >>> beforeShowIB TEST Interbank");
         msgWaitForMap(
             "mapDondeEstoyIB",
             "MI POSICION Y AGENCIAS",
@@ -15,7 +15,7 @@ app.agenciasInterbank = kendo.observable({
     onShowIB: function() {},
     afterShowIB: function() {},
     beforeHideIB: function () {
-        console.log("DFC >>> beforeHideIB TEST Interbank");
+        // console.log("DFC >>> beforeHideIB TEST Interbank");
         if (watchIDIB != null) {
             navigator.geolocation.clearWatch(watchIDIB);
         }
@@ -25,7 +25,7 @@ app.agenciasInterbank = kendo.observable({
 // START_CUSTOM_CODE_agenciasInterbank
 // Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes
 function miPosYAgenciasIB(){
-    console.log("DFC >>> Mi Pos Y Agencias Interbank");
+    // console.log("DFC >>> Mi Pos Y Agencias Interbank");
     msgWaitForFosition("mapDondeEstoyIB");
     watchIDIB = navigator.geolocation.watchPosition(
         onSuccessMiPosYAgenciasIB, onErrorMiPosYAgenciasIB, {enableHighAccuracy: true}
@@ -91,7 +91,7 @@ function onSuccessMiPosYAgenciasIB(position){
         "images/interbank_56.png"
     );
 
-    console.log("DFC >>> Mapping pin and pinTarget Interbank");
+    // console.log("DFC >>> Mapping pin and pinTarget Interbank");
 }
 
 function onErrorMiPosYAgenciasIB(error){
@@ -100,7 +100,7 @@ function onErrorMiPosYAgenciasIB(error){
 }
 
 function posValmarOficinaYAgenciasIB(){
-    console.log("DFC >>> Valmar Oficina Y Agencias Interank Inicio");
+    // console.log("DFC >>> Valmar Oficina Y Agencias Interank Inicio");
     msgWaitForFosition("mapDondeEstoyIB");
     
     $("#mapDondeEstoyIB").kendoMap({
@@ -159,7 +159,7 @@ function posValmarOficinaYAgenciasIB(){
         "images/interbank_28.png",
         "images/interbank_56.png"
     );
-    console.log("DFC >>> Valmar Oficina Y Agencias Interbank Fin");
+    // console.log("DFC >>> Valmar Oficina Y Agencias Interbank Fin");
 }
 
 // END_CUSTOM_CODE_agenciasInterbank

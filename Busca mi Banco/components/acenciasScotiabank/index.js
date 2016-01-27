@@ -4,7 +4,7 @@ var watchIDSB = null;
 
 app.acenciasScotiabank = kendo.observable({
     beforeShowSB: function () {
-        console.log("DFC >>> beforeShowSB TEST Scotia Bank");
+        // console.log("DFC >>> beforeShowSB TEST Scotia Bank");
         msgWaitForMap(
             "mapDondeEstoySB",
             "MI POSICION Y AGENCIAS",
@@ -15,7 +15,7 @@ app.acenciasScotiabank = kendo.observable({
     onShowSB: function() {},
     afterShowSB: function() {},
     beforeHideSB: function () {
-        console.log("DFC >>> beforeHideSB TEST Scotia Bank");
+        // console.log("DFC >>> beforeHideSB TEST Scotia Bank");
         if (watchIDSB != null) {
             navigator.geolocation.clearWatch(watchIDSB);
         }
@@ -25,7 +25,7 @@ app.acenciasScotiabank = kendo.observable({
 // START_CUSTOM_CODE_acenciasScotiabank
 // Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes
 function miPosYAgenciasSB(){
-    console.log("DFC >>> Mi Pos Y Agencias Scotia Bank");
+    // console.log("DFC >>> Mi Pos Y Agencias Scotia Bank");
     msgWaitForFosition("mapDondeEstoySB");
     watchIDSB = navigator.geolocation.watchPosition(
         onSuccessMiPosYAgenciasSB, onErrorMiPosYAgenciasSB, {enableHighAccuracy: true}
@@ -92,7 +92,7 @@ function onSuccessMiPosYAgenciasSB(position){
         "images/scotiabank_56.png"
     );
 
-    console.log("DFC >>> Mapping pin and pinTarget Scotia Bank");   
+    // console.log("DFC >>> Mapping pin and pinTarget Scotia Bank");   
 }
 
 function onErrorMiPosYAgenciasSB(error){
@@ -100,7 +100,7 @@ function onErrorMiPosYAgenciasSB(error){
 }
 
 function posValmarOficinaYAgenciasSB(){
-    console.log("DFC >>> Valmar Oficina Y Agencias Scotia Bank Inicio");
+    // console.log("DFC >>> Valmar Oficina Y Agencias Scotia Bank Inicio");
     msgWaitForFosition("mapDondeEstoySB");
     
     $("#mapDondeEstoySB").kendoMap({
@@ -159,7 +159,7 @@ function posValmarOficinaYAgenciasSB(){
         "images/scotiabank_28.png",
         "images/scotiabank_56.png"
     );
-    console.log("DFC >>> Valmar Oficina Y Agencias Scotia Bank Fin");
+    // console.log("DFC >>> Valmar Oficina Y Agencias Scotia Bank Fin");
 }
 
 // END_CUSTOM_CODE_acenciasScotiabank

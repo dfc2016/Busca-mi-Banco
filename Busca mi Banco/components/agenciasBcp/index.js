@@ -4,7 +4,7 @@ var watchIDBCP = null;
 
 app.agenciasBcp = kendo.observable({
     beforeShowBCP: function () {
-        console.log("DFC >>> beforeShowBCP TEST BCP");
+        // console.log("DFC >>> beforeShowBCP TEST BCP");
         msgWaitForMap(
             "mapDondeEstoyBCP",
             "MI POSICION Y AGENCIAS",
@@ -15,7 +15,7 @@ app.agenciasBcp = kendo.observable({
     onShowBCP: function () {},
     afterShowBCP: function () {},
     beforeHideBCP: function () {
-        console.log("DFC >>> beforeHideBCP TEST BCP");
+        // console.log("DFC >>> beforeHideBCP TEST BCP");
         if (watchIDBCP != null) {
             navigator.geolocation.clearWatch(watchIDBCP);
         }
@@ -25,7 +25,7 @@ app.agenciasBcp = kendo.observable({
 // START_CUSTOM_CODE_agenciasBcp
 // Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes
 function miPosYAgenciasBCP() {
-    console.log("DFC >>> Mi Pos Y Agencias BCP");
+    // console.log("DFC >>> Mi Pos Y Agencias BCP");
     msgWaitForFosition("mapDondeEstoyBCP");
     watchIDBCP = navigator.geolocation.watchPosition(
         onSuccessMiPosYAgenciasBCP, onErrorMiPosYAgenciasBCP, {
@@ -93,7 +93,7 @@ function onSuccessMiPosYAgenciasBCP(position) {
         "images/bcp_56.png"
     );
 
-    console.log("DFC >>> Mapping pin and pinTarget BCP");
+    // console.log("DFC >>> Mapping pin and pinTarget BCP");
 }
 
 function onErrorMiPosYAgenciasBCP(error) {
@@ -101,7 +101,7 @@ function onErrorMiPosYAgenciasBCP(error) {
 }
 
 function posValmarOficinaYAgenciasBCP() {
-    console.log("DFC >>> Valmar Oficina Y Agencias BCP Inicio");
+    // console.log("DFC >>> Valmar Oficina Y Agencias BCP Inicio");
     msgWaitForFosition("mapDondeEstoyBCP");
     
     $("#mapDondeEstoyBCP").kendoMap({
@@ -161,7 +161,7 @@ function posValmarOficinaYAgenciasBCP() {
         "images/bcp_56.png"
     );
 
-    console.log("DFC >>> Valmar Oficina Y Agencias BCP Fin");
+    // console.log("DFC >>> Valmar Oficina Y Agencias BCP Fin");
 }
 
 // END_CUSTOM_CODE_agenciasBcp

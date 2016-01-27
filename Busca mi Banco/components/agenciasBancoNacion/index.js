@@ -4,7 +4,7 @@ var watchIDBN = null;
 
 app.agenciasBancoNacion = kendo.observable({
     beforeShowBN: function () {
-        console.log("DFC >>> beforeShowBN TEST Banco Nación");
+        // console.log("DFC >>> beforeShowBN TEST Banco Nación");
         msgWaitForMap(
             "mapDondeEstoyBN",
             "MI POSICION Y AGENCIAS",
@@ -15,7 +15,7 @@ app.agenciasBancoNacion = kendo.observable({
     onShowBN: function() {},
     afterShowBN: function() {},
     beforeHideBN: function () {
-        console.log("DFC >>> beforeHideBN TEST Banco Nación");
+        // console.log("DFC >>> beforeHideBN TEST Banco Nación");
         if (watchIDBN != null) {
             navigator.geolocation.clearWatch(watchIDBN);
         }
@@ -25,7 +25,7 @@ app.agenciasBancoNacion = kendo.observable({
 // START_CUSTOM_CODE_agenciasBancoNacion
 // Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes
 function miPosYAgenciasBN(){
-    console.log("DFC >>> Mi Pos Y Agencias Banco Nación");
+    // console.log("DFC >>> Mi Pos Y Agencias Banco Nación");
     msgWaitForFosition("mapDondeEstoyBN");
     watchIDBN = navigator.geolocation.watchPosition(
         onSuccessMiPosYAgenciasBN, onErrorMiPosYAgenciasBN, {enableHighAccuracy: true}
@@ -91,7 +91,7 @@ function onSuccessMiPosYAgenciasBN(position){
         "images/banco_nac_56.png"
     );
 
-    console.log("DFC >>> Mapping pin and pinTarget Banco Nación");
+    // console.log("DFC >>> Mapping pin and pinTarget Banco Nación");
 }
 
 function onErrorMiPosYAgenciasBN(error){
@@ -100,7 +100,7 @@ function onErrorMiPosYAgenciasBN(error){
 }
 
 function posValmarOficinaYAgenciasBN(){
-    console.log("DFC >>> Valmar Oficina Y Agencias Banco Nación Inicio");
+    // console.log("DFC >>> Valmar Oficina Y Agencias Banco Nación Inicio");
     msgWaitForFosition("mapDondeEstoyBN");
     
     $("#mapDondeEstoyBN").kendoMap({
@@ -159,7 +159,7 @@ function posValmarOficinaYAgenciasBN(){
         "images/banco_nac_28.png",
         "images/banco_nac_56.png"
     );
-    console.log("DFC >>> Valmar Oficina Y Agencias Banco Nación Fin");
+    // console.log("DFC >>> Valmar Oficina Y Agencias Banco Nación Fin");
 }
 
 // END_CUSTOM_CODE_agenciasBancoNacion

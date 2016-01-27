@@ -51,7 +51,7 @@ function msgWaitForFosition(idMapName) {
     strHTML += "<div class=\"row\">";
     strHTML += "<div class=\"col-xs-12\">";
     strHTML += "<h2>";
-    strHTML += "Espera un momento por favor, buscando tu posicion...";
+    strHTML += "Espera un momento por favor, buscando la posición...";
     strHTML += "</h2>";
     strHTML += "</div>";
     strHTML += "</div>";
@@ -75,7 +75,7 @@ function msgWaitForMap(idMapName,cmd1,cmd2,agencias) {
         strHTML += "<div class=\"row\">";
         strHTML += "<div class=\"col-xs-12\">";
         strHTML += "<h4>";
-        strHTML += "Para encontrar mi posocion y las agencias "+ agencias + " en el mapa";
+        strHTML += "Para encontrar mi posición y las agencias "+ agencias + " en el mapa";
         strHTML += "</h4>";
         strHTML += "</div>";
         strHTML += "</div>";
