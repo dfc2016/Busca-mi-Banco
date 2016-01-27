@@ -23,11 +23,9 @@ function miPosYAgenciasSB(){
     console.log("DFC >>> Mi Pos Y Agencias Scotia Bank");
     msgWaitForFosition("mapDondeEstoySB");
     watchIDSB = navigator.geolocation.watchPosition(
-        onSuccessMiPosYAgenciasSB, onErrorMiPosYAgenciasSB, {
-            timeout: 2000,
-            enableHighAccuracy: true
-        }
+        onSuccessMiPosYAgenciasSB, onErrorMiPosYAgenciasSB, {enableHighAccuracy: true}
     );
+
 }
 
 function onSuccessMiPosYAgenciasSB(position){

@@ -1,12 +1,12 @@
 'use strict';
 
-(function() {
+(function () {
     var app = {
         data: {}
     };
 
-    var bootstrap = function() {
-        $(function() {
+    var bootstrap = function () {
+        $(function () {
             app.mobileApp = new kendo.mobile.Application(document.body, {
                 transition: 'slide',
                 skin: 'flat',
@@ -16,7 +16,7 @@
     };
 
     if (window.cordova) {
-        document.addEventListener('deviceready', function() {
+        document.addEventListener('deviceready', function () {
             if (navigator && navigator.splashscreen) {
                 navigator.splashscreen.hide();
             }
@@ -34,7 +34,7 @@
 
     window.app = app;
 
-    app.isOnline = function() {
+    app.isOnline = function () {
         if (!navigator || !navigator.connection) {
             return true;
         } else {
@@ -58,34 +58,40 @@ function msgWaitForFosition(idMapName) {
     strHTML += "</div>";
     strHTML += "</div>";
     //$("#mapDondeEstoy").html(strHTML);
-    $("#"+idMapName).html(strHTML);
+    $("#" + idMapName).html(strHTML);
 }
 
-function selectIconsPinMarkers(icons_family,icons_family_2x){
-    	$("#IconsMarker").text("");
-    
-        var strCSSIcons = "";
-    
-        strCSSIcons += ".k-map .k-marker { ";
-        strCSSIcons += " background-image: url("+ icons_family +") !important; ";
-        strCSSIcons += "}";
-    
-    	strCSSIcons += " @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) { ";
-    	strCSSIcons += " .k-map .k-marker { ";
-        strCSSIcons += " background-image: url("+ icons_family_2x +") !important; ";
-    	strCSSIcons += "}";
-    	strCSSIcons += " }";
-        $("#IconsMarker").text(strCSSIcons);
+function selectIconsPinMarkers(icons_family, icons_family_2x) {
+    $("#IconsMarker").text("");
+
+    var strCSSIcons = "";
+
+    strCSSIcons += ".k-map .k-marker { ";
+    strCSSIcons += " background-image: url(" + icons_family + ") !important; ";
+    strCSSIcons += "}";
+
+    strCSSIcons += " @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) { ";
+    strCSSIcons += " .k-map .k-marker { ";
+    strCSSIcons += " background-image: url(" + icons_family_2x + ") !important; ";
+    strCSSIcons += "}";
+    strCSSIcons += " }";
+    $("#IconsMarker").text(strCSSIcons);
 }
 
 function openErrMsgGPS(error) {
     $("#errMsgGPS").data("kendoMobileModalView").open();
-    if (error != null){
-        //alert('code: ' + error.code + '\n' + 'message: ' + error.message + '\n');
-        var strMsg = "";
-        strMsg += 'Code: ' + error.code + '<br>';
-        strMsg += 'Message: ' + error.message;
-        $("#errCodeAndMsg").html(strMsg);
+    if (error != null) {
+        //IMPORTANT error.code == 3 TIMEOUT ERROR
+        if (error.code == 3){
+            $("#errCodeAndMsg").html("SISTEMA GPS CONGESTIONADO...");
+        }
+        //Capture all other error
+        if (error.code != 3) {
+            var strMsg = "";
+            strMsg += 'Code: ' + error.code + '<br>';
+            strMsg += 'Message: ' + error.message;
+            $("#errCodeAndMsg").html(strMsg);
+        }
     }
 }
 

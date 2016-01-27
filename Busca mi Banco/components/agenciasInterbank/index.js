@@ -23,10 +23,7 @@ function miPosYAgenciasIB(){
     console.log("DFC >>> Mi Pos Y Agencias Interbank");
     msgWaitForFosition("mapDondeEstoyIB");
     watchIDIB = navigator.geolocation.watchPosition(
-        onSuccessMiPosYAgenciasIB, onErrorMiPosYAgenciasIB, {
-            timeout: 2000,
-            enableHighAccuracy: true
-        }
+        onSuccessMiPosYAgenciasIB, onErrorMiPosYAgenciasIB, {enableHighAccuracy: true}
     );
 }
 

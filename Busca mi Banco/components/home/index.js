@@ -63,10 +63,7 @@ function startSegPOS() {
     $("#stopSegPosDondeEstoy").prop("disabled", false);
     msgWaitForFosition("mapDondeEstoy");
     watchIDDondeEstoy = navigator.geolocation.watchPosition(
-        onSuccessDondeEstoy, onErrorDondeEstoy, {
-            timeout: 10000,
-            enableHighAccuracy: true
-        }
+        onSuccessDondeEstoy, onErrorDondeEstoy, {enableHighAccuracy: true}
     );
 
 }

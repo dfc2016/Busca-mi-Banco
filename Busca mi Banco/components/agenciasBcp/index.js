@@ -23,10 +23,7 @@ function miPosYAgenciasBCP() {
     console.log("DFC >>> Mi Pos Y Agencias BCP");
     msgWaitForFosition("mapDondeEstoyBCP");
     watchIDBCP = navigator.geolocation.watchPosition(
-        onSuccessMiPosYAgenciasBCP, onErrorMiPosYAgenciasBCP, {
-            timeout: 2000,
-            enableHighAccuracy: true
-        }
+        onSuccessMiPosYAgenciasBCP, onErrorMiPosYAgenciasBCP, {enableHighAccuracy: true}
     );
 }
 
